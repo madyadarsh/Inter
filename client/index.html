@@ -5,24 +5,22 @@
 	<meta charset="utf-8"
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Interview Creation Portal</title>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="css/fixed.css">
-	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="fixed.css">
 </head>
 <body data-spy="scroll" data-target="#navbarResponsive">
 	<!---start home-->
 	<div id="home">
 
 					<!---start navigation-->
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark fixed-top">
 		<a class="navbar-brand" href="#">Interview Creation Portal</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="navbarResponsive" >
-			<ul class="navbar-nav ml-auto">
+		<div class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark fixed-top" id="navbarResponsive">
+			<ul class=" navbar-brand navbar-nav ml-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="#home">Home</a>
 				</li>
@@ -70,7 +68,7 @@
                 interview start time and end time.
                 Here you can also view interviews list page where admin can see all the upcoming interviews. 
                 And here you can also edit the created interview. </p>
-<a class="btn bn-secondary btn-outline-dark btn-md" href="#schedule-interview">Schedule Interview</a>
+<a class="btn bn-secondary btn-outline-dark btn-md" href="#schedule-interview" style="background-color:cornflowerblue">Schedule Interview</a>
 <br>
 <br>
 <br>
@@ -198,7 +196,7 @@
                         </div>
                     
 					<div class="caption text-center"></div>
-                    <button id="submit-btn" class="btn btnD1 text-center" >Schedule the Interview</button>
+                    <button id="submit-btn" class="btn btnD1 text-center" style="background-color:cornflowerblue" >Schedule the Interview</button>
 					</div>
                 </div>
 				<br>
@@ -255,9 +253,39 @@
 			
 	<!---sources start-->
 
-	
+	<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker({
+                useCurrent: false //Important! See issue #1075
+            });
+            $("#datetimepicker1").on("dp.change", function (e) {
+                $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker2").on("dp.change", function (e) {
+                $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepickerUpdate1').datetimepicker();
+            $('#datetimepickerUpdate2').datetimepicker({
+                useCurrent: false //Important! See issue #1075
+            });
+            $("#datetimepickerUpdate1").on("dp.change", function (e) {
+                $('#datetimepickerUpdate2').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepickerUpdate2").on("dp.change", function (e) {
+                $('#datetimepickerUpdate1').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    </script>
     
 <script src="index.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="bootstrap/4.1.3-dist/js/bootstrap.min.js"></script>
